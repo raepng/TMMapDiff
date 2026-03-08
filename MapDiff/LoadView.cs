@@ -34,11 +34,18 @@ namespace MapDiff
 
         private void showDiffBtn_Click(object sender, EventArgs e)
         {
-            CGameCtnChallenge oldMap = Gbx.ParseNode<CGameCtnChallenge>(mapOldTxt.Text);
-            CGameCtnChallenge newMap = Gbx.ParseNode<CGameCtnChallenge>(mapNewTxt.Text);
-            DiffView diffView = new DiffView();
-            diffView.Show();
-            diffView.LoadDiff(oldMap, newMap);
+            try
+            {
+                CGameCtnChallenge oldMap = Gbx.ParseNode<CGameCtnChallenge>(mapOldTxt.Text);
+                CGameCtnChallenge newMap = Gbx.ParseNode<CGameCtnChallenge>(mapNewTxt.Text);
+                DiffView diffView = new DiffView();
+                diffView.Show();
+                diffView.LoadDiff(oldMap, newMap);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading maps: " + ex.Message);
+            }
         }
     }
 }

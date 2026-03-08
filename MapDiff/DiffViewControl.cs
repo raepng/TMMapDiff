@@ -30,6 +30,7 @@ namespace MapDiff
                     {
                         blockControl.Location = new Point(x * blockControl.Width, z * blockControl.Height);
                         this.Controls.Add(blockControl);
+                        blockControl.SetMoveCallback(this.OnMouseMove);
                     }
                 }
             }

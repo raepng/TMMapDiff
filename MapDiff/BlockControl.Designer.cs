@@ -41,11 +41,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.LightBlue;
             Name = "BlockControl";
             Size = new Size(15, 15);
-            Click += BlockControl_Click;
+            MouseDown += BlockControl_MouseDown;
             MouseHover += BlockControl_MouseHover;
+            MouseMove += BlockControl_MouseMove;
             ResumeLayout(false);
         }
 
